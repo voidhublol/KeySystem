@@ -1,0 +1,64 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, IntroEnabled = false})
+
+
+getgenv().Key = "FREEKEYCUZIMPROJKLMAO"
+getgenv().KeyInput = "string"
+
+function fuckDaddy()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/voidhublol/Cefrus/main/CefrusHub")))()
+end
+
+OrionLib:MakeNotification({
+    Name = "Logged In!",
+    Content = "You are logged in as "..Player.Name..".",
+    Image = "rbxassetid://4483345998",
+    Time = 3
+})
+
+function correctKey()
+    OrionLib:MakeNotification({
+        Name = "Correct Key!",
+        Content = "You have entered the correct key!",
+        Image = "rbxassetid://4483345998",
+        Time = 3
+})
+end
+
+function incorrectKey()
+    OrionLib:MakeNotification({
+        Name = "Inorrect Key!",
+        Content = "You have entered the Incorrect key!",
+        Image = "rbxassetid://4483345998",
+        Time = 3
+})
+end
+
+local Tab = Window:MakeTab({
+    Name = "Key",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddTextbox({
+    Name = "Enter Key",
+    Default = "Enter Key",
+    TextDisappear = true,
+    Callback = function(Value)
+        getgenv().KeyInput = Value
+        print(KeyInput)
+    end	  
+})
+
+Tab:AddButton({
+    Name = "Check Key",
+    Callback = function()
+        if getgenv().KeyInput == getgenv().Key then
+        fuckDaddy()
+        correctKey()
+        else
+            incorrectKey()
+        end
+    end
+})
